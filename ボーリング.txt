@@ -47,7 +47,7 @@ public class Boooring {
 
 
 				//空文字の場合、エラーメッセージを出す
-				if(str.equals("")){
+				if(str.equals("")||str.equals(" ")){
 					System.out.println("何も入力されていません。再度、数字を入力してください。");
 					continue;
 				}
@@ -77,7 +77,7 @@ public class Boooring {
 					str = scan.nextLine();
 
 					//空文字の場合、エラーメッセージを出す
-					if(str.equals("")){
+					if(str.equals("")||str.equals(" ")){
 						System.out.println("何も入力されていません。再度、数字を入力してください。");
 						continue;
 					}
@@ -90,6 +90,7 @@ public class Boooring {
 					}
 					if (onenum != 10 && onenum + townum > 10 ){
 						System.out.println("2投合わせて10をこえてます。やりなおし。");
+						continue;
 					}
 					break;
 				}
@@ -111,7 +112,7 @@ public class Boooring {
 						String stst = scan.nextLine();
 
 						//空文字の場合、エラーメッセージを出す
-						if(stst.equals(" ")){
+						if(stst.equals("")||str.equals(" ")){
 							System.out.println("何も入力されていません。再度、数字を入力してください。");
 							continue;
 						}
@@ -129,7 +130,6 @@ public class Boooring {
 
 		}
 
-		//
 		onetou.add(10,10);
 		onetou.add(11,10);
 
@@ -182,10 +182,6 @@ public class Boooring {
 				point[i] = sum;
 
 			}
-
-
-
-
 		}
 
 		//合計計算
@@ -196,10 +192,11 @@ public class Boooring {
 
 		//合計表示
 		System.out.println("合計は"+ total +"点です。");
-		System.out.println("------------------------------------------------------------------------------------------------------------------------");
-		System.out.println("|     1     |     2     |     3     |     4     |      5    |     6     |     7     |     8     |       9    |    10     |   合計    |");
-		System.out.println("------------------------------------------------------------------------------------------------------------------------");
-		System.out.println("|  "+point[0]+"      |   "+point[1]+"       |   "+point[2]+"      |   "+point[3]+"      |   "+point[4]+"      |    "+point[5]+"     |  "+point[6]+"       |    "+point[7]+"     |    "+point[8]+"     |     "+point[9]+"    |    "+total+"     |");
+		System.out.println("------------------------------------------------------------------------------------------------------------------------------------");
+		System.out.println("|     1     |     2     |     3     |     4     |      5    |     6     |     7     |     8     |       9    |    10     |   合計       |");
+		System.out.println("------------------------------------------------------------------------------------------------------------------------------------");
+		System.out.println("|  "+point[0]+"      |   "+point[1]+"       |   "+point[2]+"      |   "+point[3]+"      |   "+point[4]+"      |    "+point[5]+"     |  "+point[6]+"       |    "+point[7]+"     |    "+point[8]+"     |     "+point[9]+"    ||   "+total+"     |");
 	}
 }
+
 
