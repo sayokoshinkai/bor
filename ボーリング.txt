@@ -1,0 +1,205 @@
+
+import java.util.ArrayList;
+import java.util.Scanner;
+public class Boooring {
+
+
+	public static void main(String[] args) {
+		//変数宣言
+		//一投目を格納する配列
+		ArrayList<Integer> onetou = new ArrayList();
+		//２投目を格納する配列
+		ArrayList<Integer> towtou = new ArrayList();
+		//10フレーム
+		int tenthree = 0;
+		//全てのフレーム配列
+		ArrayList<Integer> tenflame = new ArrayList();
+		//1フレームの合計
+		int sum;
+		int i = 0;
+		int onenum = 0;
+		int townum = 0;
+		int total = 0 ;
+		int[] point = new int[10];
+
+		String str;
+
+
+		//ゲームスタート
+		System.out.println("ゲームスタート");
+
+
+
+		//キーボード準備
+		Scanner scan = new Scanner (System.in);
+
+
+		//10フレームまで入力(フレームは10こ用意)
+		for (i = 0; i < 10; i++  ){
+			System.out.println(i +1+ "フレーム目");
+
+
+
+			//入力判定
+			while(true){
+				System.out.print("1投目を投げてください→");
+				str = scan.nextLine();
+
+
+				//空文字の場合、エラーメッセージを出す
+				if(str.equals("")){
+					System.out.println("何も入力されていません。再度、数字を入力してください。");
+					continue;
+				}
+				onenum = Integer.parseInt(str);
+
+				//範囲外の数字が入力。再度正しい数字を入力するよう促す
+				if(onenum > 10){
+					System.out.println("→範囲外の数字が入力されました。再度、数字を入力してください。");
+					continue;
+				}
+				break;
+			}
+
+			//入力判定クリアしたら要素を格納
+			onetou.add(i,onenum);
+
+			//１投目ストライクの場合
+			if(onenum == 10){
+				System.out.println("ストライク");
+				towtou.add(i,0);
+
+			} else {
+				//入力判定
+				while(true){
+					//点数入力
+					System.out.print("2投目を投げてください→");
+					str = scan.nextLine();
+
+					//空文字の場合、エラーメッセージを出す
+					if(str.equals("")){
+						System.out.println("何も入力されていません。再度、数字を入力してください。");
+						continue;
+					}
+					townum = Integer.parseInt(str);
+
+					//範囲外の数字が入力。再度正しい数字を入力するよう促す
+					if(townum > 10){
+						System.out.println("→範囲外の数字が入力されました。再度、数字を入力してください。");
+						continue;
+					}
+					if (onenum != 10 && onenum + townum > 10 ){
+						System.out.println("2投合わせて10をこえてます。やりなおし。");
+					}
+					break;
+				}
+
+				//二投目格納
+				towtou.add(i,townum);
+				if(onenum + townum == 10){
+					System.out.println("スペア");
+				}
+			}
+
+			//特殊三投目
+			if (i == 9 ){
+				if(onenum == 10 || townum == 10 || onenum + townum == 10){
+
+					//入力判定
+					while(true){
+						System.out.print("3投目を投げてください→");
+						String stst = scan.nextLine();
+
+						//空文字の場合、エラーメッセージを出す
+						if(stst.equals(" ")){
+							System.out.println("何も入力されていません。再度、数字を入力してください。");
+							continue;
+						}
+						tenthree = Integer.parseInt(stst);
+
+						//範囲外の数字が入力。再度正しい数字を入力するよう促す
+						if(townum > 10){
+							System.out.println("→範囲外の数字が入力されました。再度、数字を入力してください。");
+							continue;
+						}
+						break;
+					}
+				}
+			}
+
+		}
+
+		//
+		onetou.add(10,10);
+		onetou.add(11,10);
+
+
+		//１フレーム計算
+		for (i = 0; i < 10; i++){
+			//1投目と2投目を足す
+			sum = onetou.get(i) + towtou.get(i);
+			//格納
+			point[i] = sum;
+
+			if ( i == 10 ){
+				sum = sum + tenthree;
+				point[i] = sum;
+			}
+
+
+			//ストライクの場合
+			if(onetou.get(i) == 10 || towtou.get(i) == 10){
+				if (i == 9 ){
+					sum = 10 + towtou.get(9) +tenthree;
+					point[i] = sum;
+				}else{
+					sum = 10 + onetou.get(i + 1) + towtou.get(i + 1);
+					point[i] = sum;
+				}
+
+				//ダブルの時
+				if(onetou.get(i + 1)  == 10){
+					if (i == 8 ){
+						sum = 10 + 10 + towtou.get(i + 1);
+						point[i] = sum;
+					}else{
+						sum = 10 + 10 + onetou.get(i + 2);
+						point[i] = sum;
+					}
+
+					//ターキーの時
+					if(onetou.get(i + 2) == 10){
+						sum = 30;
+
+						point[i] = sum;
+					}
+				}
+			}
+
+			//スペアの場合
+			if (towtou.get(i) != 0 && onetou.get(i) + towtou.get(i) == 10){
+				sum = 10 + onetou.get(i + 1);
+				point[i] = sum;
+
+			}
+
+
+
+
+		}
+
+		//合計計算
+		for (i = 0 ; i < 10 ; i++){
+			total += point[i];
+		}
+
+
+		//合計表示
+		System.out.println("合計は"+ total +"点です。");
+		System.out.println("------------------------------------------------------------------------------------------------------------------------");
+		System.out.println("|     1     |     2     |     3     |     4     |      5    |     6     |     7     |     8     |       9    |    10     |   合計    |");
+		System.out.println("------------------------------------------------------------------------------------------------------------------------");
+		System.out.println("|  "+point[0]+"      |   "+point[1]+"       |   "+point[2]+"      |   "+point[3]+"      |   "+point[4]+"      |    "+point[5]+"     |  "+point[6]+"       |    "+point[7]+"     |    "+point[8]+"     |     "+point[9]+"    |    "+total+"     |");
+	}
+}
+
