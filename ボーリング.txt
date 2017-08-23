@@ -5,122 +5,129 @@ public class Boooring {
 
 
 	public static void main(String[] args) {
-		//•Ï”éŒ¾
-		//ˆê“Š–Ú‚ğŠi”[‚·‚é”z—ñ
+		//å¤‰æ•°å®£è¨€
+		
+		//1æŠ•ç›®ã‚’æ ¼ç´ã™ã‚‹é…åˆ—
 		ArrayList<Integer> onetou = new ArrayList();
-		//‚Q“Š–Ú‚ğŠi”[‚·‚é”z—ñ
+		
+		//2æŠ•ç›®ã‚’æ ¼ç´ã™ã‚‹é…åˆ—
 		ArrayList<Integer> towtou = new ArrayList();
-		//10ƒtƒŒ[ƒ€
+		
+		//10ãƒ•ãƒ¬ãƒ¼ãƒ 3æŠ•ç›®
 		int tenthree = 0;
-		//‘S‚Ä‚ÌƒtƒŒ[ƒ€”z—ñ
-		ArrayList<Integer> tenflame = new ArrayList();
-		//1ƒtƒŒ[ƒ€‚Ì‡Œv
+	
+		//1ãƒ•ãƒ¬ãƒ¼ãƒ ã®åˆè¨ˆ
 		int sum;
+		
+		//ãƒ•ãƒ¬ãƒ¼ãƒ ã‚«ã‚¦ãƒ³ãƒˆ
 		int i = 0;
+		
+		//1æŠ•ç›®ç‚¹æ•°
 		int onenum = 0;
+		
+		//2æŠ•ç›®ç‚¹æ•°
 		int townum = 0;
+		
+		//åˆè¨ˆ
 		int total = 0 ;
+		
+		//å…¨ãƒ•ãƒ¬ãƒ¼ãƒ åˆ†é…åˆ—
 		int[] point = new int[10];
 
 		String str;
 
 
-		//ƒQ[ƒ€ƒXƒ^[ƒg
-		System.out.println("ƒQ[ƒ€ƒXƒ^[ƒg");
+		//ã‚²ãƒ¼ãƒ ã‚¹ã‚¿ãƒ¼ãƒˆ
+		System.out.println("ã‚²ãƒ¼ãƒ ã‚¹ã‚¿ãƒ¼ãƒˆ");
 
-
-
-		//ƒL[ƒ{[ƒh€”õ
+		//ã‚­ãƒ¼ãƒœãƒ¼ãƒ‰æº–å‚™
 		Scanner scan = new Scanner (System.in);
 
-
-		//10ƒtƒŒ[ƒ€‚Ü‚Å“ü—Í(ƒtƒŒ[ƒ€‚Í10‚±—pˆÓ)
+		//10ãƒ•ãƒ¬ãƒ¼ãƒ ã¾ã§å…¥åŠ›(ãƒ•ãƒ¬ãƒ¼ãƒ ã¯10ã“ç”¨æ„)
 		for (i = 0; i < 10; i++  ){
-			System.out.println(i +1+ "ƒtƒŒ[ƒ€–Ú");
+			System.out.println(i +1+ "ãƒ•ãƒ¬ãƒ¼ãƒ ç›®");
 
-
-
-			//“ü—Í”»’è
+			//å…¥åŠ›åˆ¤å®š
 			while(true){
-				System.out.print("1“Š–Ú‚ğ“Š‚°‚Ä‚­‚¾‚³‚¢¨");
+				System.out.print("1æŠ•ç›®ã‚’æŠ•ã’ã¦ãã ã•ã„â†’");
 				str = scan.nextLine();
 
-
-				//‹ó•¶š‚Ìê‡AƒGƒ‰[ƒƒbƒZ[ƒW‚ğo‚·
+				//ç©ºæ–‡å­—ã®å ´åˆã€ã‚¨ãƒ©ãƒ¼ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’å‡ºã™
 				if(str.equals("")||str.equals(" ")){
-					System.out.println("‰½‚à“ü—Í‚³‚ê‚Ä‚¢‚Ü‚¹‚ñBÄ“xA”š‚ğ“ü—Í‚µ‚Ä‚­‚¾‚³‚¢B");
+					System.out.println("ä½•ã‚‚å…¥åŠ›ã•ã‚Œã¦ã„ã¾ã›ã‚“ã€‚å†åº¦ã€æ•°å­—ã‚’å…¥åŠ›ã—ã¦ãã ã•ã„ã€‚");
 					continue;
 				}
+				
 				onenum = Integer.parseInt(str);
 
-				//”ÍˆÍŠO‚Ì”š‚ª“ü—ÍBÄ“x³‚µ‚¢”š‚ğ“ü—Í‚·‚é‚æ‚¤‘£‚·
+				//ç¯„å›²å¤–ã®æ•°å­—ãŒå…¥åŠ›ã€‚å†åº¦æ­£ã—ã„æ•°å­—ã‚’å…¥åŠ›ã™ã‚‹ã‚ˆã†ä¿ƒã™
 				if(onenum > 10){
-					System.out.println("¨”ÍˆÍŠO‚Ì”š‚ª“ü—Í‚³‚ê‚Ü‚µ‚½BÄ“xA”š‚ğ“ü—Í‚µ‚Ä‚­‚¾‚³‚¢B");
+					System.out.println("â†’ç¯„å›²å¤–ã®æ•°å­—ãŒå…¥åŠ›ã•ã‚Œã¾ã—ãŸã€‚å†åº¦ã€æ•°å­—ã‚’å…¥åŠ›ã—ã¦ãã ã•ã„ã€‚");
 					continue;
 				}
 				break;
 			}
 
-			//“ü—Í”»’èƒNƒŠƒA‚µ‚½‚ç—v‘f‚ğŠi”[
+			//å…¥åŠ›åˆ¤å®šã‚¯ãƒªã‚¢ã—ãŸã‚‰è¦ç´ ã‚’æ ¼ç´
 			onetou.add(i,onenum);
 
-			//‚P“Š–ÚƒXƒgƒ‰ƒCƒN‚Ìê‡
+			//ï¼‘æŠ•ç›®ã‚¹ãƒˆãƒ©ã‚¤ã‚¯ã®å ´åˆ
 			if(onenum == 10){
-				System.out.println("ƒXƒgƒ‰ƒCƒN");
+				System.out.println("ã‚¹ãƒˆãƒ©ã‚¤ã‚¯");
 				towtou.add(i,0);
 
 			} else {
-				//“ü—Í”»’è
+				//å…¥åŠ›åˆ¤å®š
 				while(true){
-					//“_”“ü—Í
-					System.out.print("2“Š–Ú‚ğ“Š‚°‚Ä‚­‚¾‚³‚¢¨");
+					//ç‚¹æ•°å…¥åŠ›
+					System.out.print("2æŠ•ç›®ã‚’æŠ•ã’ã¦ãã ã•ã„â†’");
 					str = scan.nextLine();
 
-					//‹ó•¶š‚Ìê‡AƒGƒ‰[ƒƒbƒZ[ƒW‚ğo‚·
+					//ç©ºæ–‡å­—ã®å ´åˆã€ã‚¨ãƒ©ãƒ¼ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’å‡ºã™
 					if(str.equals("")||str.equals(" ")){
-						System.out.println("‰½‚à“ü—Í‚³‚ê‚Ä‚¢‚Ü‚¹‚ñBÄ“xA”š‚ğ“ü—Í‚µ‚Ä‚­‚¾‚³‚¢B");
+						System.out.println("ä½•ã‚‚å…¥åŠ›ã•ã‚Œã¦ã„ã¾ã›ã‚“ã€‚å†åº¦ã€æ•°å­—ã‚’å…¥åŠ›ã—ã¦ãã ã•ã„ã€‚");
 						continue;
 					}
 					townum = Integer.parseInt(str);
 
-					//”ÍˆÍŠO‚Ì”š‚ª“ü—ÍBÄ“x³‚µ‚¢”š‚ğ“ü—Í‚·‚é‚æ‚¤‘£‚·
+					//ç¯„å›²å¤–ã®æ•°å­—ãŒå…¥åŠ›ã€‚å†åº¦æ­£ã—ã„æ•°å­—ã‚’å…¥åŠ›ã™ã‚‹ã‚ˆã†ä¿ƒã™
 					if(townum > 10){
-						System.out.println("¨”ÍˆÍŠO‚Ì”š‚ª“ü—Í‚³‚ê‚Ü‚µ‚½BÄ“xA”š‚ğ“ü—Í‚µ‚Ä‚­‚¾‚³‚¢B");
+						System.out.println("â†’ç¯„å›²å¤–ã®æ•°å­—ãŒå…¥åŠ›ã•ã‚Œã¾ã—ãŸã€‚å†åº¦ã€æ•°å­—ã‚’å…¥åŠ›ã—ã¦ãã ã•ã„ã€‚");
 						continue;
 					}
 					if (onenum != 10 && onenum + townum > 10 ){
-						System.out.println("2“Š‡‚í‚¹‚Ä10‚ğ‚±‚¦‚Ä‚Ü‚·B‚â‚è‚È‚¨‚µB");
+						System.out.println("2æŠ•åˆã‚ã›ã¦10ã‚’ã“ãˆã¦ã¾ã™ã€‚ã‚„ã‚ŠãªãŠã—ã€‚");
 						continue;
 					}
 					break;
 				}
 
-				//“ñ“Š–ÚŠi”[
+				//äºŒæŠ•ç›®æ ¼ç´
 				towtou.add(i,townum);
 				if(onenum + townum == 10){
-					System.out.println("ƒXƒyƒA");
+					System.out.println("ã‚¹ãƒšã‚¢");
 				}
 			}
 
-			//“ÁêO“Š–Ú
+			//ç‰¹æ®Šä¸‰æŠ•ç›®
 			if (i == 9 ){
 				if(onenum == 10 || townum == 10 || onenum + townum == 10){
 
-					//“ü—Í”»’è
+					//å…¥åŠ›åˆ¤å®š
 					while(true){
-						System.out.print("3“Š–Ú‚ğ“Š‚°‚Ä‚­‚¾‚³‚¢¨");
+						System.out.print("3æŠ•ç›®ã‚’æŠ•ã’ã¦ãã ã•ã„â†’");
 						String stst = scan.nextLine();
 
-						//‹ó•¶š‚Ìê‡AƒGƒ‰[ƒƒbƒZ[ƒW‚ğo‚·
+						//ç©ºæ–‡å­—ã®å ´åˆã€ã‚¨ãƒ©ãƒ¼ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’å‡ºã™
 						if(stst.equals("")||str.equals(" ")){
-							System.out.println("‰½‚à“ü—Í‚³‚ê‚Ä‚¢‚Ü‚¹‚ñBÄ“xA”š‚ğ“ü—Í‚µ‚Ä‚­‚¾‚³‚¢B");
+							System.out.println("ä½•ã‚‚å…¥åŠ›ã•ã‚Œã¦ã„ã¾ã›ã‚“ã€‚å†åº¦ã€æ•°å­—ã‚’å…¥åŠ›ã—ã¦ãã ã•ã„ã€‚");
 							continue;
 						}
 						tenthree = Integer.parseInt(stst);
 
-						//”ÍˆÍŠO‚Ì”š‚ª“ü—ÍBÄ“x³‚µ‚¢”š‚ğ“ü—Í‚·‚é‚æ‚¤‘£‚·
+						//ç¯„å›²å¤–ã®æ•°å­—ãŒå…¥åŠ›ã€‚å†åº¦æ­£ã—ã„æ•°å­—ã‚’å…¥åŠ›ã™ã‚‹ã‚ˆã†ä¿ƒã™
 						if(townum > 10){
-							System.out.println("¨”ÍˆÍŠO‚Ì”š‚ª“ü—Í‚³‚ê‚Ü‚µ‚½BÄ“xA”š‚ğ“ü—Í‚µ‚Ä‚­‚¾‚³‚¢B");
+							System.out.println("â†’ç¯„å›²å¤–ã®æ•°å­—ãŒå…¥åŠ›ã•ã‚Œã¾ã—ãŸã€‚å†åº¦ã€æ•°å­—ã‚’å…¥åŠ›ã—ã¦ãã ã•ã„ã€‚");
 							continue;
 						}
 						break;
@@ -130,15 +137,15 @@ public class Boooring {
 
 		}
 
+		//ã‚¹ãƒˆãƒ©ã‚¤ã‚¯ç”¨
 		onetou.add(10,10);
 		onetou.add(11,10);
 
-
-		//‚PƒtƒŒ[ƒ€ŒvZ
+		//ï¼‘ãƒ•ãƒ¬ãƒ¼ãƒ è¨ˆç®—
 		for (i = 0; i < 10; i++){
-			//1“Š–Ú‚Æ2“Š–Ú‚ğ‘«‚·
+			//1æŠ•ç›®ã¨2æŠ•ç›®ã‚’è¶³ã™
 			sum = onetou.get(i) + towtou.get(i);
-			//Ši”[
+			//æ ¼ç´
 			point[i] = sum;
 
 			if ( i == 10 ){
@@ -146,8 +153,7 @@ public class Boooring {
 				point[i] = sum;
 			}
 
-
-			//ƒXƒgƒ‰ƒCƒN‚Ìê‡
+			//ã‚¹ãƒˆãƒ©ã‚¤ã‚¯ã®å ´åˆ
 			if(onetou.get(i) == 10 || towtou.get(i) == 10){
 				if (i == 9 ){
 					sum = 10 + towtou.get(9) +tenthree;
@@ -157,7 +163,7 @@ public class Boooring {
 					point[i] = sum;
 				}
 
-				//ƒ_ƒuƒ‹‚Ì
+				//ãƒ€ãƒ–ãƒ«ã®æ™‚
 				if(onetou.get(i + 1)  == 10){
 					if (i == 8 ){
 						sum = 10 + 10 + towtou.get(i + 1);
@@ -167,7 +173,7 @@ public class Boooring {
 						point[i] = sum;
 					}
 
-					//ƒ^[ƒL[‚Ì
+					//ã‚¿ãƒ¼ã‚­ãƒ¼ã®æ™‚
 					if(onetou.get(i + 2) == 10){
 						sum = 30;
 
@@ -176,7 +182,7 @@ public class Boooring {
 				}
 			}
 
-			//ƒXƒyƒA‚Ìê‡
+			//ã‚¹ãƒšã‚¢ã®å ´åˆ
 			if (towtou.get(i) != 0 && onetou.get(i) + towtou.get(i) == 10){
 				sum = 10 + onetou.get(i + 1);
 				point[i] = sum;
@@ -184,16 +190,16 @@ public class Boooring {
 			}
 		}
 
-		//‡ŒvŒvZ
+		//åˆè¨ˆè¨ˆç®—
 		for (i = 0 ; i < 10 ; i++){
 			total += point[i];
 		}
 
 
-		//‡Œv•\¦
-		System.out.println("‡Œv‚Í"+ total +"“_‚Å‚·B");
+		//åˆè¨ˆè¡¨ç¤º
+		System.out.println("åˆè¨ˆã¯"+ total +"ç‚¹ã§ã™ã€‚");
 		System.out.println("------------------------------------------------------------------------------------------------------------------------------------");
-		System.out.println("|     1     |     2     |     3     |     4     |      5    |     6     |     7     |     8     |       9    |    10     |   ‡Œv       |");
+		System.out.println("|     1     |     2     |     3     |     4     |      5    |     6     |     7     |     8     |       9    |    10     |   åˆè¨ˆ       |");
 		System.out.println("------------------------------------------------------------------------------------------------------------------------------------");
 		System.out.println("|  "+point[0]+"      |   "+point[1]+"       |   "+point[2]+"      |   "+point[3]+"      |   "+point[4]+"      |    "+point[5]+"     |  "+point[6]+"       |    "+point[7]+"     |    "+point[8]+"     |     "+point[9]+"    ||   "+total+"     |");
 	}
